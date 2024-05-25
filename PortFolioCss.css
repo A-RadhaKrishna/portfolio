@@ -1,0 +1,145 @@
+/* General styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Light background color */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background-color: #2c3e50; /* Darker sidebar background color */
+    color: #ecf0f1;
+    width: 250px;
+    height: 100vh;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;gi
+    border-right: 1px solid #34495e; /* Dark border on the right */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 1rem 0;
+}
+
+.sidebar ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    display: block;
+    padding: 0.75rem 1rem; /* Increased padding */
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #34495e; /* Darker background on hover */
+}
+
+.content {
+    margin-left: 250px;
+    padding: 2rem;
+    width: calc(100% - 250px); /* Adjusted width to accommodate sidebar */
+    box-sizing: border-box;
+}
+
+.hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 5rem 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Slightly increased shadow */
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.7); /* Slightly transparent background */
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 1rem;
+    border: 5px solid #ecf0f1;
+}
+
+section {
+    background-color: #fff;
+    padding: 1.5rem; /* Reduced padding */
+    margin-bottom: 1.5rem; /* Reduced margin */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+section h2 {
+    color: #2980b9;
+    text-align: center;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 0.5rem;
+}
+
+section p, section ul, section li, section div {
+    /* Removed text-align: left; to inherit parent's text alignment */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        border-right: none; /* Remove border on smaller screens */
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .sidebar ul li a {
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 100%;
+        position: static;
+        height: auto;
+        overflow-y: auto;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .hero {
+        padding: 3rem 1rem; /* Reduced padding */
+    }
+
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+}
